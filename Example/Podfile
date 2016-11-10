@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NBGaugeView_Example' do
+  pod 'NBGaugeView', :path => '../'
+
+  target 'NBGaugeView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
