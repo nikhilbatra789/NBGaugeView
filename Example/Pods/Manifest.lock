@@ -1,0 +1,16 @@
+PODS:
+  - NBGaugeView (0.1.0)
+
+DEPENDENCIES:
+  - NBGaugeView (from `../`)
+
+EXTERNAL SOURCES:
+  NBGaugeView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NBGaugeView: 231383c653e9984c65e4c35b412e3b07474f0215
+
+PODFILE CHECKSUM: 9622fa981d49191e574b225f74181d5d1a0f2ccc
+
+COCOAPODS: 1.0.1

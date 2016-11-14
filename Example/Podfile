@@ -8,4 +8,11 @@ target 'NBGaugeView_Example' do
 
     
   end
+
+post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+        # Configure Pod targets for Xcode 8 with Swift 3.0
+        config.build_settings['SWIFT_VERSION'] = ‘3.0.1’
+    end
+end
 end

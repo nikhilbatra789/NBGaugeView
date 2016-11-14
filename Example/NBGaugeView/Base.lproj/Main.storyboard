@@ -1,25 +1,122 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Example View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ExampleViewController" customModule="NBGaugeView_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ6-zh-pbS" customClass="NBGaugeView" customModule="NBGaugeView">
+                                <rect key="frame" x="112" y="75" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="YFc-TK-vC6"/>
+                                    <constraint firstAttribute="height" constant="150" id="fem-O3-HW9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="percentage">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gaugeColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="GaugeView"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                        <color key="value" red="0.87450980389999999" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gaugeBackgroundColor">
+                                        <color key="value" red="0.87450980389999999" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="kBA-LS-NTc">
+                                <rect key="frame" x="14" y="307" width="347" height="31"/>
+                                <connections>
+                                    <action selector="thicknessChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="kLg-z4-jJz"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thickness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-px-veM">
+                                <rect key="frame" x="16" y="278" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-Cx-pbS">
+                                <rect key="frame" x="16" y="379" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dKq-in-ntq">
+                                <rect key="frame" x="14" y="408" width="347" height="31"/>
+                                <connections>
+                                    <action selector="percentageChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="3dJ-mA-bdB"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3W-d1-b4T">
+                                <rect key="frame" x="338" y="278" width="21" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNH-iN-R1f">
+                                <rect key="frame" x="338" y="379" width="21" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kBA-LS-NTc" firstAttribute="top" secondItem="Ep0-px-veM" secondAttribute="bottom" constant="8" id="2Z6-eg-qOS"/>
+                            <constraint firstItem="kBA-LS-NTc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6lQ-rO-22B"/>
+                            <constraint firstItem="dKq-in-ntq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="BNn-Fz-nbO"/>
+                            <constraint firstItem="kBA-LS-NTc" firstAttribute="trailing" secondItem="W3W-d1-b4T" secondAttribute="trailing" id="JKd-bT-Rpw"/>
+                            <constraint firstItem="kBA-LS-NTc" firstAttribute="top" secondItem="W3W-d1-b4T" secondAttribute="bottom" constant="8" id="MFR-Ut-m5n"/>
+                            <constraint firstItem="dKq-in-ntq" firstAttribute="leading" secondItem="Kas-Cx-pbS" secondAttribute="leading" id="QFQ-mR-QR7"/>
+                            <constraint firstItem="JNH-iN-R1f" firstAttribute="trailing" secondItem="dKq-in-ntq" secondAttribute="trailing" id="Qzs-ge-TzV"/>
+                            <constraint firstItem="Kas-Cx-pbS" firstAttribute="top" secondItem="kBA-LS-NTc" secondAttribute="bottom" constant="42" id="RLB-Ft-Wpu"/>
+                            <constraint firstItem="dKq-in-ntq" firstAttribute="top" secondItem="JNH-iN-R1f" secondAttribute="bottom" constant="8" id="SaC-3x-xGx"/>
+                            <constraint firstItem="DZ6-zh-pbS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="55" id="gl0-S2-nSd"/>
+                            <constraint firstItem="Ep0-px-veM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ke7-Ee-23k"/>
+                            <constraint firstItem="kBA-LS-NTc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="lha-7A-RqR"/>
+                            <constraint firstItem="DZ6-zh-pbS" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="oIr-Ek-VtQ"/>
+                            <constraint firstItem="Kas-Cx-pbS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="vnf-vN-Mk1"/>
+                            <constraint firstItem="Ep0-px-veM" firstAttribute="top" secondItem="DZ6-zh-pbS" secondAttribute="bottom" constant="53" id="w6q-uf-Pv9"/>
+                            <constraint firstItem="dKq-in-ntq" firstAttribute="top" secondItem="Kas-Cx-pbS" secondAttribute="bottom" constant="8" id="whm-3v-0pp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gaugeView" destination="DZ6-zh-pbS" id="mxP-DW-n06"/>
+                        <outlet property="percentageLabel" destination="JNH-iN-R1f" id="jBU-hA-Jy2"/>
+                        <outlet property="thicknesslabel" destination="W3W-d1-b4T" id="Z4m-IQ-Vrl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>

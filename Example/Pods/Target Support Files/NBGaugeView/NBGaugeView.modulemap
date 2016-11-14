@@ -1,0 +1,6 @@
+framework module NBGaugeView {
+  umbrella header "NBGaugeView-umbrella.h"
+
+  export *
+  module * { export * }
+}
